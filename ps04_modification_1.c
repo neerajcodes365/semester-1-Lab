@@ -13,14 +13,16 @@ int main()
     scanf("%d", &week_4);
     printf("number of days per week5 = ");
     scanf("%d", &week_5);
-
-    // if (total_weeks > 31)
-    // {
-    //     printf("enter valid number of weeks!!!!!");
-    // }
+    
+    total_weeks=week_1+week_2+week_3+week_4+week_5;
 
     printf("daily wage = ");
     scanf("%f", &daily_wage);
+
+     if (total_weeks > 31)
+    {
+        printf("enter valid number of weeks!!!!!");
+    }
 
     if (week_1 > 0)
     {
@@ -46,12 +48,38 @@ int main()
 
 
     
-     if (week_3 >= 0)
-    {
-        if (week_3 <= 3)
+     if (week_3 >= 0 && week_3 <= 3)
+    
+        
         {
             sum = (week_3 * daily_wage) + sum;
         }
         else
         sum=(3*daily_wage)+(week_3-3)*daily_wage*(3/4)+sum;
+
+
+     if (week_4 > 0)
+    {
+        if (week_4 <= 3)
+        {
+            sum = (week_4 * daily_wage) + sum;
+        }
+        else
+        sum=(3*daily_wage)+(week_4-3)*daily_wage*(3/4)+sum;
     }
+
+
+     if (week_5 >= 0)
+    {
+        if (week_5 <= 3)
+        {
+            sum = (week_5 * daily_wage) + sum;
+        }
+        else
+        sum=(3*daily_wage)+(week_5-3)*daily_wage*(3/4)+sum;
+    }
+
+    printf(" monthly salary = %f",sum);
+
+    return 0;
+}
